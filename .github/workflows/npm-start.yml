@@ -1,13 +1,18 @@
-name: Npm start
+name: Node.js CI
+on: [push]
 
-on:
-  push:
-    branches:
-      - main
 jobs:
-  deploy:
-    runs-on: "self-hosted"
-    
+  build:
+
+    runs-on: ubuntu-latest
+
     steps:
-    -  name: Checkout
-       uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm run test
+      - run: npm start
