@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
         # Assuming that the ssh connection from the runner to the lxc is already established 
       - name: Connect to the lxc
-        run: ssh ${{secrets.REMOTE_USERNAME}}@${{secrets.REMOTE_HOST}} << 'EOF'
+        run: ssh -o StrictHostKeyChecking=no -p 22 ${{secrets.REMOTE_USERNAME}}@${{secrets.REMOTE_HOST}} 'ip a'
       
       # - name: Clone/Pull the repo
       #   working-directory: ${{secrets.REPO_NAME}}  
