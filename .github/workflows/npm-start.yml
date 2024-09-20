@@ -11,10 +11,11 @@ jobs:
         # Assuming that the ssh connection from the runner to the lxc is already established 
       - name: Connect to the lxc
         run: ssh ${{secrets.REMOTE_USERNAME}}@${{secrets.REMOTE_HOST}}
-      - name: Clone/Pull the repo
-        working-directory: ${{secrets.REPO_NAME}}  
-        run: |
-            cd ${{secrets.REPO_NAME}}
-            git pull origin main
+      
+      # - name: Clone/Pull the repo
+      #   working-directory: ${{secrets.REPO_NAME}}  
+      #   run: |
+      #       cd ${{secrets.REPO_NAME}}
+      #       git pull origin main
       - name: Test if works
-        run: echo "It works!"
+        run: ip a
