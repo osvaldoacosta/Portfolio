@@ -14,8 +14,8 @@ jobs:
       - name: Clone/Pull the repo
         # Also assuming that the user github info is present in lxc already
         run: |
-          if [ ! -d ${{secrets.REPO_NAME}} ]; then
-              git clone https://github.com/${{secrets.USER_NAME}}/${{secrets.REPO_NAME}}.git
+          if [ ! -d "./${{ secrets.REPO_NAME }}" ]; then 
+              git clone https://github.com/${{secrets.USER_NAME}}/${{secrets.REPO_NAME}}
           else
             cd ${{secrets.REPO_NAME}}
             git pull origin main
