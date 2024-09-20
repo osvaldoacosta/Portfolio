@@ -1,14 +1,13 @@
-name: Deploy!
+name: Deploy
 on: [push]
 
 jobs:
   build:
-
     runs-on: self-hosted
-
     steps:
       - uses: actions/checkout@v4
         # Assuming that the ssh connection from the runner to the lxc is already established 
-      - name: Connect to the lxc and deploy
+      - name: Connect to the LXC and deploy
         run: ssh -o StrictHostKeyChecking=no -p 22 ${{secrets.REMOTE_USERNAME}}@${{secrets.REMOTE_HOST}} 'cd && ./deploy.sh ${{secrets.REPO_NAME}} ${{secrets.USER_NAME}}'
     
+  
