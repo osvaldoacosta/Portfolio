@@ -1,39 +1,21 @@
 import Link from "next/link";
-
 import styles from "./index.module.css";
-
 export default function Home() {
+
+  const gifUrl = "https://i.gifer.com/Q7qV.gif"
+  const hammer = "https://i.gifer.com/YzDB.gif"
+  const wall = "https://i.gifer.com/ZSj2.gif"
+  const goofy = "https://i.gifer.com/TJ6b.gif"
   return (
     <main className={styles.main}>
-      <div className={styles.container}>
-        <h1 className={styles.title}>
-          Create <span className={styles.pinkSpan}>T3</span> App
-        </h1>
-        <div className={styles.cardRow}>
-          <Link
-            className={styles.card}
-            href="https://create.t3.gg/en/usage/first-steps"
-            target="_blank"
-          >
-            <h3 className={styles.cardTitle}>First Steps →</h3>
-            <div className={styles.cardText}>
-              Just the basics - Everything you need to know to set up your
-              database and authentication.
-            </div>
-          </Link>
-          <Link
-            className={styles.card}
-            href="https://create.t3.gg/en/introduction"
-            target="_blank"
-          >
-            <h3 className={styles.cardTitle}>Documentation →</h3>
-            <div className={styles.cardText}>
-              Learn more about Create T3 App, the libraries it uses, and how to
-              deploy it.
-            </div>
-          </Link>
-        </div>
-      </div>
+        <div className="App">
+            <h1>Opa amigão, isso aqui tá em obra!</h1>
+      	    <img src={hammer} alt="Obra" />
+      	    <img src={wall} alt="Obra"/>
+      	    <img src={gifUrl} alt="Obra" />
+	    <h2>Tenha calma parceiro</h2>
+      	    <img src={goofy} alt="Obra" />
+    	</div>
     </main>
   );
 }
