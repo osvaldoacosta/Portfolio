@@ -1,12 +1,10 @@
 import styles from '../styles/LeftMenu.module.css'
 import Image from 'next/image'
-
+// TODO: Remove direct href links
 export default function LeftMenu(): JSX.Element {
-  const imageUrl =
-    'https://media.licdn.com/dms/image/v2/D4D03AQFwGJa7hcPKrA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709269979513?e=1732752000&v=beta&t=h928q76Cns_fsfW1bT8oDDDRFM1u_98kZuvWygTUPik'
-
+  const imageUrl: string = process.env.PROFILE_URL ?? ""
   return (
-    <div className={styles.container}>
+    <div className={styles.leftMenu}>
       <div className={styles.profile}>
         <Image src={imageUrl} width={120} height={120} alt="Osvaldo" />
         <h2>Osvaldo Costa</h2>

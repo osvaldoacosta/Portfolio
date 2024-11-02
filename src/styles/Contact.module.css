@@ -1,0 +1,72 @@
+.contactContainer {
+  text-align: center;
+  /* Center text in the container */
+  padding: 20px;
+  /* Padding for the container */
+  width: 100%;
+  /* Allow the container to take full width */
+  max-width: 300px;
+  /* Max width for the container */
+  margin: 0 auto;
+  /* Center the container horizontally */
+}
+
+.cardItem {
+  background: #f9f9f9;
+  /* Light background for the card */
+  border: 1px solid #ddd;
+  /* Border around the card */
+  border-radius: 8px;
+  /* Rounded corners */
+  padding: 20px;
+  /* Padding inside the card */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  margin: 0 auto;
+  /* Center the card horizontally */
+  display: flex;
+  /* Use flexbox to enable stretching */
+  flex-direction: column;
+  /* Stack items vertically */
+  align-items: stretch;
+  /* Stretch items to fill the card */
+}
+
+.contactRow {
+  display: flex;
+  /* Use flexbox to align items in a row */
+  align-items: center;
+  /* Center items vertically */
+  margin: 10px 0;
+  /* Margin between rows */
+}
+
+.contactLink {
+  display: flex;
+  /* Align items in a row */
+  align-items: center;
+  /* Center items vertically */
+  text-decoration: none;
+  /* Remove underline from links */
+  color: #333;
+  /* Default text color */
+  transition: color 0.2s;
+  /* Smooth transition for hover effect */
+}
+
+.contactLink:hover {
+  color: #36C965;
+  /* Change color on hover */
+}
+
+.icon {
+  margin-right: 10px;
+  /* Space between icon and title */
+}
+
+.cardTitle {
+  font-weight: bold;
+  /* Bold title */
+  font-size: 1.2em;
+  /* Adjust font size */
+}

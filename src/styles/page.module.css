@@ -1,0 +1,40 @@
+.layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* Ensures even spacing between items */
+  align-items: stretch;
+  /* Stretch items to the full height of the container */
+}
+
+/* .description { */
+/*   flex: 1; */
+/*   /* Take up remaining space */
+/*   padding: 20px; */
+/*   display: flex; */
+/*   justify-content: center; */
+/*   /* center content horizontally */
+/*   align-items: center; */
+/*   /* Center content vertically */
+/* } */
+/**/
+/* .servicesContainer { */
+/*   flex: 2; */
+/*   /* Optional: To take equal space like description */
+/*   display: flex; */
+/*   justify-content: center; */
+/*   /* Center Services horizontally */
+/*   align-items: center; */
+/*   /* Center Services vertically */
+/*   padding: 20px; */
+/* } */
+
+.centerContainer {
+  flex: 1;
+  /* Take up remaining space between LeftMenu and RightMenu */
+  display: flex;
+  flex-direction: column;
+  /* Stack children vertically */
+  /* padding: 20px; */
+  /* Padding around the center container */
+}

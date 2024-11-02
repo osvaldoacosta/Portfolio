@@ -1,5 +1,5 @@
-import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import styles from '../styles/layout.module.css'
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -11,7 +11,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html>
+    <html className={styles.defaultPage}>
 
       <body>{children}</body>
     </html>
