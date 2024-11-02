@@ -3,7 +3,7 @@ services:
     image: portfolio
     build:
       context: ./
-      target: production
+      target: dev #dev | production 
       dockerfile: Dockerfile
     volumes:
         - .:/app

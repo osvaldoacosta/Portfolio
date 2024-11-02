@@ -1,0 +1,129 @@
+/* Container for the entire navigation */
+/* .navContainer { */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   align-items: center; */
+/*   padding: 10px; */
+/* } */
+
+.navContainer {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 110px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-inline: 10px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border-radius: 8px;
+}
+
+/* Top horizontal icons container */
+.horizontalIcons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+  margin-bottom: 100px;
+}
+
+/* Styling for the top icons (horizontal ones) */
+.topIcon {
+  position: relative;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 18px;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.topIcon:hover .icon {
+  color: black;
+}
+
+/* Tooltip for both top and vertical icons */
+.tooltip {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-left: 10px solid rgba(0, 0, 0, 0.8);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.topIcon:hover .tooltip,
+.navItem:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Vertical section for navigation icons */
+.verticalIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Each individual navigation item */
+.navItem {
+  position: relative;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+/* Icon circle */
+.iconCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+.navItem:hover .icon {
+  color: black;
+}
+
+.iconCircle:hover {
+  background-color: #ddd;
+}
+
+/* Active state */
+.active .iconCircle {
+  background-color: orange;
+}
+
+.active .icon {
+  color: black;
+}
