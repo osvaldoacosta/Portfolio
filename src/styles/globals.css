@@ -1,0 +1,18 @@
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+[data-theme="dark"] {
+  filter: invert(1) hue-rotate(200deg);
+  transition: filter var(--transition-duration) ease-in-out;
+}
+
+body {
+  transition: filter var(--transition-duration) ease-in-out;
+}
+
+/* any className with no-invert will... not invert colors :O */
+[data-theme="dark"] body img.no-invert {
+  filter: invert(1) hue-rotate(-200deg);
+}

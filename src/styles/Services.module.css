@@ -15,7 +15,7 @@
 }
 
 .cardItem {
-  background: #f9f9f9;
+  background: #f1f1f1;
   /* Light background for cards */
   border: 1px solid #ddd;
   /* Border around cards */
@@ -29,7 +29,7 @@
   /* Each card takes 25% of the row width minus margins */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* Subtle shadow for depth */
-  text-align: left;
+  text-align: center;
   /* Align text to the left inside cards */
   transition: width 0.3s ease;
   /* Smooth transition for width */
@@ -76,7 +76,7 @@
   font-weight: bold;
   padding-inline: 25px;
   /* Padding on the sides */
-  color: #333;
+  color: #222;
   /* Text color */
 }
 

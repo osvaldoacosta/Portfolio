@@ -6,6 +6,7 @@ import Services from "~/Components/Services";
 import Contact from "~/Components/Contact";
 export default function Home() {
   return (
+
     <main>
       <div className={style.layout}>
         <LeftMenu />

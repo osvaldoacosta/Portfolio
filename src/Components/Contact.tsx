@@ -3,9 +3,9 @@ import styles from "../styles/Contact.module.css"
 import Image from "next/image";
 export default function Contact(): JSX.Element {
   const contacts = [
-    { icon: "github.svg", title: "Github", url: "https://github.com/osvaldoacosta" },
-    { icon: "linkedin.svg", title: "LinkedIn", url: "https://www.linkedin.com/in/osvaldo-azevedo-costa-37b632241/" },
-    { icon: "email.svg", title: "Email", url: "mailto:osvaldocosta.smhc@gmail.com" },]
+    { icon: "/github.webp", title: "Github", url: "https://github.com/osvaldoacosta" },
+    { icon: "/linkedin.webp", title: "LinkedIn", url: "https://www.linkedin.com/in/osvaldo-azevedo-costa-37b632241/" },
+    { icon: "/email.webp", title: "Email", url: "mailto:osvaldocosta.smhc@gmail.com" },]
   return (
     <div className={styles.contactContainer}>
       <h1>Contact Information</h1>
