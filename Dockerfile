@@ -11,6 +11,7 @@ RUN npm run build
 
 
 FROM base as production
+echo "PROD STAGE STARTED"
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -29,6 +30,7 @@ COPY --from=builder /app/public ./public
 CMD npm start
 
 FROM base as dev
+echo "DEV STAGE STARTED"
 ENV NODE_ENV=development
 npm cache clean
 RUN npm install --force

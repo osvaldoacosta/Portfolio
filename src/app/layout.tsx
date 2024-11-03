@@ -1,5 +1,7 @@
 import { type Metadata } from "next";
 import styles from '../styles/layout.module.css'
+import { ThemeProvider } from "~/Components/ThemeProvider";
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -12,8 +14,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html className={styles.defaultPage}>
-
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
