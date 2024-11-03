@@ -1,12 +1,13 @@
 import styles from '../styles/LeftMenu.module.css'
 import Image from 'next/image'
+
 // TODO: Remove direct href links
 export default function LeftMenu(): JSX.Element {
   const imageUrl: string = process.env.PROFILE_URL ?? ""
   return (
     <div className={styles.leftMenu}>
       <div className={styles.profile}>
-        <Image src={imageUrl} width={120} height={120} alt="Osvaldo" />
+        <Image src={imageUrl} priority={true} width={120} height={120} alt="Osvaldo" className="no-invert" />
         <h2>Osvaldo Costa</h2>
         <p>Full Stack Developer</p>
         <div className={styles.socialMedia}>
@@ -15,14 +16,14 @@ export default function LeftMenu(): JSX.Element {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="github.svg" alt="GitHub" width={24} height={24} />
+            <Image src="/github.webp" alt="GitHub" width={24} height={24} />
           </a>
           <a
             href="https://www.linkedin.com/in/osvaldo-azevedo-costa-37b632241/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="linkedin.svg" alt="GitHub" width={24} height={24} />
+            <Image src="/linkedin.webp" alt="GitHub" width={24} height={24} />
           </a>
         </div>
       </div>
