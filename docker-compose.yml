@@ -1,13 +1,17 @@
+version: '3.8'
 services:
   app:
     image: portfolio
     build:
       context: ./
-      target: production #dev | production 
+      target: ${TARGET:-production} # Choose dev or production
       dockerfile: Dockerfile
     volumes:
-        - .:/app
-        - /app/node_modules
-        - /app/.next
+      - .:/app      # Use in dev only
+      - /app/node_modules
+      - /app/.next
     ports:
       - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+
