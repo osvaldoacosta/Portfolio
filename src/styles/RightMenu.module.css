@@ -1,124 +1,123 @@
 .navContainer {
-  position: relative;
-  top: 0;
-  right: 0;
-  width: 110px;
-  background-color: white;
+  position: sticky;
+  top: var(--gap);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
-  padding-inline: 10px;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  gap: 8px;
+  padding: 10px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
   z-index: 100;
-  border-radius: 8px;
-
-  background-color: #f3f3f3;
+  animation: rise 0.5s 0.12s ease both;
 }
 
-/* Top horizontal icons container */
-.horizontalIcons {
+.group {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 10px;
-  margin-bottom: 100px;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Styling for the top icons (horizontal ones) */
-.topIcon {
+.divider {
+  width: 24px;
+  height: 1px;
+  background-color: var(--border);
+}
+
+.item {
   position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: var(--text-muted);
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.icon {
-  font-size: 18px;
-  color: gray;
-  transition: color 0.3s ease;
+.item:hover {
+  background-color: var(--surface-raised);
+  color: var(--text);
 }
 
-.topIcon:hover .icon {
-  color: black;
+.active,
+.active:hover {
+  background-color: var(--accent);
+  color: var(--on-accent);
 }
 
-/* Tooltip for both top and vertical icons */
+.sun {
+  display: none;
+}
+
+:global([data-theme="dark"]) .sun {
+  display: block;
+}
+
+:global([data-theme="dark"]) .moon {
+  display: none;
+}
+
+.languageCode {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 /* TODO: Change the tooltip to another file, so it can be used in all website */
 .tooltip {
   position: absolute;
   top: 50%;
-  right: 40px;
-  transform: translateY(-50%);
-  background-color: black;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
+  right: calc(100% + 12px);
+  transform: translate(4px, -50%);
+  padding: 5px 10px;
+  background-color: var(--text);
+  border-radius: 8px;
+  color: var(--bg);
+  font-size: 0.8rem;
+  white-space: nowrap;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
-  word-wrap: break-word;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.tooltip::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -5px;
-  transform: translateY(-50%);
-  border-left: 10px solid rgba(0, 0, 0, 0.8);
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  width: 0;
-  height: 0;
-}
-
-.topIcon:hover .tooltip,
-.navItem:hover .tooltip {
+.item:hover .tooltip,
+.item:focus-visible .tooltip {
   visibility: visible;
   opacity: 1;
+  transform: translate(0, -50%);
 }
 
-/* Vertical section for navigation icons */
-.verticalIcons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
+@media (max-width: 1040px) {
+  .navContainer {
+    position: fixed;
+    top: auto;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    padding: 6px;
+    box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.4);
+    animation: none;
+  }
 
-/* Each individual navigation item */
-.navItem {
-  position: relative;
-  margin: 20px 0;
-  cursor: pointer;
-}
+  .group {
+    flex-direction: row;
+    gap: 4px;
+  }
 
-/* Icon circle */
-.iconCircle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #E9E9E9;
-  transition: background-color 0.3s ease;
-}
+  .divider {
+    width: 1px;
+    height: 24px;
+  }
 
-.navItem:hover .icon {
-  color: black;
-}
-
-.iconCircle:hover {
-  background-color: #ddd;
-}
-
-/* Active state */
-.active .iconCircle {
-  background-color: orange;
-}
-
-.active .icon {
-  color: black;
+  .tooltip {
+    display: none;
+  }
 }

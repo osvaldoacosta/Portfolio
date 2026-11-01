@@ -1,18 +1,31 @@
 .layout {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* Ensures even spacing between items */
-  align-items: stretch;
-  /* Stretch items to the full height of the container */
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) 68px;
+  gap: var(--gap);
+  align-items: start;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--gap);
 }
 
 .centerContainer {
-  flex: 1;
-  /* Take up remaining space between LeftMenu and RightMenu */
   display: flex;
   flex-direction: column;
-  /* Stack children vertically */
-  /* padding: 20px; */
-  /* Padding around the center container */
+  gap: var(--gap);
+  min-width: 0;
+}
+
+@media (max-width: 1040px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 16px 96px;
+    gap: 16px;
+  }
+
+  .centerContainer {
+    order: 2;
+    gap: 16px;
+  }
 }

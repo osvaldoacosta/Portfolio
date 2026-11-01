@@ -1,24 +1,31 @@
+"use client";
+
 import React from "react";
 import styles from "../styles/Contact.module.css"
-import Image from "next/image";
+import { ArrowIcon, GithubIcon, LinkedinIcon, MailIcon } from "~/Components/Icons";
+import { useLanguage } from "~/Components/LanguageProvider";
+
 export default function Contact(): JSX.Element {
+  const { contact: text } = useLanguage().t;
   const contacts = [
-    { icon: "/github.webp", title: "Github", url: "https://github.com/osvaldoacosta" },
-    { icon: "/linkedin.webp", title: "LinkedIn", url: "https://www.linkedin.com/in/osvaldo-azevedo-costa-37b632241/" },
-    { icon: "/email.webp", title: "Email", url: "mailto:osvaldocosta.smhc@gmail.com" },]
+    { icon: GithubIcon, title: "Github", handle: "osvaldoacosta", url: "https://github.com/osvaldoacosta" },
+    { icon: LinkedinIcon, title: "LinkedIn", handle: "osvaldo-azevedo-costa", url: "https://www.linkedin.com/in/osvaldo-azevedo-costa-37b632241/" },
+    { icon: MailIcon, title: text.email, handle: "osvaldocosta.smhc@gmail.com", url: "mailto:osvaldocosta.smhc@gmail.com" },]
   return (
-    <div className={styles.contactContainer}>
-      <h1>Contact Information</h1>
+    <section id="contact" className={styles.contactContainer}>
+      <h2>{text.title}</h2>
       <div className={styles.cardItem}>
-        {contacts.map((contact, index) => (
-          <div key={index} className={styles.contactRow}>
-            <a href={contact.url} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
-              <Image src={contact.icon} alt={contact.title} width={25} height={25} className={styles.icon} />
+        {contacts.map((contact) => (
+          <a key={contact.url} href={contact.url} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+            <contact.icon size={22} className={styles.icon} />
+            <span className={styles.cardText}>
               <span className={styles.cardTitle}>{contact.title}</span>
-            </a>
-          </div>
+              <span className={styles.cardHandle}>{contact.handle}</span>
+            </span>
+            <ArrowIcon size={18} className={styles.arrow} />
+          </a>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

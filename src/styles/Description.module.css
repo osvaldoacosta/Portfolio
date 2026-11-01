@@ -1,49 +1,82 @@
-.button {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #36C965;
-  /* background-color: #5FD39A; */
-  margin-inline: 25px;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #61D187;
-  /* Slightly darker green on hover */
-}
-
 .description {
-  height: auto;
-  /* Changed from a fixed height to auto to allow for content */
-  background-color: #f5f5f5;
-  margin-inline: 40px;
-  border-radius: 8px;
-  padding: 20px;
-  /* Add padding for better spacing inside */
+  position: relative;
+  overflow: hidden;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(28px, 5vw, 64px);
+  scroll-margin-top: var(--gap);
+  animation: rise 0.5s 0.08s ease both;
+}
+
+.description::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -12%;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--accent-soft), transparent);
+  pointer-events: none;
+}
+
+.description > * {
+  position: relative;
+  z-index: 1;
 }
 
 .description h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  padding-inline: 25px;
-  color: #333;
+  max-width: 15ch;
+  font-size: clamp(2.3rem, 5.4vw, 4.1rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
 }
 
 .highlight {
-  color: #36C965;
-  /* color: #5FD39A; Removed the second color to avoid confusion */
+  white-space: nowrap;
+  color: var(--accent-text);
 }
 
 .description p {
-  padding-inline: 25px;
-  font-size: 1.2rem;
-  color: #666;
-  margin-top: 10px;
-  line-height: 1.6;
+  max-width: 62ch;
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.button,
+.ghostButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius-small);
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.button {
+  background-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.button:hover {
+  background-color: var(--accent-hover);
+}
+
+.ghostButton {
+  border: 1px solid var(--border-strong);
+}
+
+.ghostButton:hover {
+  border-color: var(--accent);
 }
