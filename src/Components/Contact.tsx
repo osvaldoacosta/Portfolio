@@ -20,7 +20,7 @@ export default function Contact(): JSX.Element {
             <contact.icon size={22} className={styles.icon} />
             <span className={styles.cardText}>
               <span className={styles.cardTitle}>{contact.title}</span>
-              <span className={styles.cardHandle}>{contact.handle}</span>
+              <span className={styles.cardHandle}>{contact.handle.replace("@", "@\u200B")}</span>
             </span>
             <ArrowIcon size={18} className={styles.arrow} />
           </a>

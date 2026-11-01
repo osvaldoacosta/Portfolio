@@ -1,0 +1,58 @@
+{
+  "name": "Osvaldo Azevedo Costa",
+  "title": "Software Developer - Mid Level",
+  "contacts": [
+    { "label": "osvaldocosta.smhc@gmail.com", "url": "mailto:osvaldocosta.smhc@gmail.com" },
+    { "label": "osvaldoazevedo.com", "url": "https://osvaldoazevedo.com" },
+    { "label": "github.com/osvaldoacosta", "url": "https://github.com/osvaldoacosta" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/osvaldo-azevedo-costa-37b632241/" }
+  ],
+  "summary": "I'm a mid-level Software Developer at CI&T with a full-stack profile (Node.js, MongoDB, React/Vite), QA automation experience and a Java/Spring Boot background. I work end to end with clients, from PRD and story refinement to implementation and testing, and I'm an early adopter of AI-assisted, Spec-Driven Development.",
+  "skills": [
+    { "label": "Full Stack", "items": ["Node.js", "Express.js", "MongoDB", "React", "Next.js", "JavaScript/TypeScript", "HTML+CSS"] },
+    { "label": "Java Backend", "items": ["Java", "Spring Boot", "Spring Security", "JPA/Hibernate", "PostgreSQL", "SQL"] },
+    { "label": "QA & Automation", "items": ["Playwright", "Cucumber/BDD", "Puppeteer"], "notes": "E2E, regression, smoke and manual testing" },
+    { "label": "DevOps", "items": ["Git/GitHub", "GitHub Actions", "CI/CD", "Docker", "SonarQube"] },
+    { "label": "AI Tooling", "items": ["Claude Code", "Cursor", "BMAD", "MCP", "CI&T Flow", "Langflow"] },
+    { "label": "Agile", "items": [], "notes": "PRD/story refinement, client communication, Knowledge Transfer" },
+    { "label": "Other", "items": ["Golang", "Python", "Linux"] }
+  ],
+  "languages": ["Portuguese (Native)", "English (Advanced, C1)"],
+  "experience": [
+    {
+      "period": "Oct 2025 – Present",
+      "role": "Software Developer",
+      "company": "CI&T",
+      "highlights": [
+        "Full-stack development of new features (Node.js, MongoDB, React/Vite), from design to testing, plus production maintenance and bug fixing.",
+        "Playwright/Cucumber (BDD) E2E automation (test data strategy, framework refactoring, dedicated E2E test database) plus regression, smoke and manual QA.",
+        "Sole developer on the Roles & Permissions feature: made the case for its prioritization, proposed incremental delivery, and drove it with BMAD from PRD and story refinement to delivery and bug fixing.",
+        "AI-assisted Spec-Driven Development (Claude Code, BMAD) with MCP integrations (Figma, Jira, SonarQube); introduced BMAD-based test-case and test-code generation for QA.",
+        "Automated GitHub release notes with CI&T Flow Maker (Langflow-based); CI/CD with GitHub Actions.",
+        "Agile delivery in direct collaboration with clients; Knowledge Transfer sessions on test automation."
+      ]
+    },
+    {
+      "period": "Mar 2025 – Sep 2025",
+      "role": "Software Developer Intern",
+      "company": "CI&T",
+      "highlights": [
+        "Full-stack development (MongoDB, Node.js, React/Vite); QA coverage for the team during vacation periods.",
+        "E2E, regression, manual and smoke testing; automation workflows with GitHub Actions; Git/GitHub.",
+        "Requirements gathering directly with stakeholders; Agile ceremonies and client meetings."
+      ]
+    },
+    {
+      "period": "Mar 2023 – Mar 2025",
+      "role": "Software Developer",
+      "company": "Recicletool",
+      "highlights": [
+        "Freelance Spring Boot microservices for partner programs; legacy app maintenance and documentation (PostgreSQL, OpenAPI Generator, JPA/Hibernate, Spring Security)."
+      ]
+    }
+  ],
+  "education": [
+    { "period": "2025", "description": "Bachelor's degree in Computer Engineering - Universidade de Pernambuco (UPE)" },
+    { "period": "2020 – 2022", "description": "Technologist degree in Internet Systems - Universidade Católica de Pernambuco (UNICAP)" }
+  ]
+}

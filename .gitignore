@@ -13,6 +13,9 @@
 /prisma/db.sqlite-journal
 db.sqlite
 
+# generated from src/data/cv.json
+/public/cv.pdf
+
 # next.js
 /.next/
 /out/

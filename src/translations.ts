@@ -15,11 +15,11 @@ export const translations = {
         { name: "Portuguese", level: "Native" },
         { name: "English", level: "Advanced (C1)" },
       ],
-      skillGroups: [
-        { title: "Programming Languages", items: ["Java", "JavaScript/Typescript", "Python", "SQL"] },
-        { title: "Frameworks and Libraries", items: ["React", "Next.js", "Express.js", "Spring Boot", "PostgreSQL", "Puppeteer"] },
-        { title: "Extra", items: ["Git", "Docker", "CI/CD Knowledge", "HTML+CSS", "Linux"] },
-      ],
+      skillTitles: {
+        programmingLanguages: "Programming Languages",
+        frameworksAndLibraries: "Frameworks and Libraries",
+        extra: "Extra",
+      },
       downloadCv: "Download CV",
     },
     hero: {
@@ -58,11 +58,11 @@ export const translations = {
         { name: "Português", level: "Nativo" },
         { name: "Inglês", level: "Avançado (C1)" },
       ],
-      skillGroups: [
-        { title: "Linguagens de Programação", items: ["Java", "JavaScript/Typescript", "Python", "SQL"] },
-        { title: "Frameworks e Bibliotecas", items: ["React", "Next.js", "Express.js", "Spring Boot", "PostgreSQL", "Puppeteer"] },
-        { title: "Extra", items: ["Git", "Docker", "Conhecimento em CI/CD", "HTML+CSS", "Linux"] },
-      ],
+      skillTitles: {
+        programmingLanguages: "Linguagens de Programação",
+        frameworksAndLibraries: "Frameworks e Bibliotecas",
+        extra: "Extra",
+      },
       downloadCv: "Baixar currículo",
     },
     hero: {

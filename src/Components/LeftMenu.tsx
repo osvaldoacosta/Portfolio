@@ -4,10 +4,16 @@ import styles from '../styles/LeftMenu.module.css'
 import Image from 'next/image'
 import { DownloadIcon, GithubIcon, LinkedinIcon } from '~/Components/Icons'
 import { useLanguage } from '~/Components/LanguageProvider'
+import { type DetectedSkills, type SkillCategory } from '~/lib/skills'
+
+interface LeftMenuProps {
+  skills: DetectedSkills;
+}
 
 // TODO: Remove direct href links
-export default function LeftMenu(): JSX.Element {
+export default function LeftMenu({ skills }: LeftMenuProps): JSX.Element {
   const { profile } = useLanguage().t;
+  const categories = Object.keys(profile.skillTitles) as SkillCategory[];
   return (
     <aside className={styles.leftMenu}>
       <div className={`${styles.card} ${styles.profile}`}>
@@ -47,18 +53,18 @@ export default function LeftMenu(): JSX.Element {
           ))}
         </div>
 
-        {profile.skillGroups.map((group) => (
-          <div key={group.title} className={styles.section}>
-            <h4>{group.title}</h4>
+        {categories.map((category) => (
+          <div key={category} className={styles.section}>
+            <h4>{profile.skillTitles[category]}</h4>
             <div className={styles.chips}>
-              {group.items.map((item) => (
+              {skills[category].map((item) => (
                 <span key={item} className={styles.chip}>{item}</span>
               ))}
             </div>
           </div>
         ))}
 
-        <button className={styles.button}><DownloadIcon size={18} /> {profile.downloadCv}</button>
+        <a href="/cv.pdf" download="Osvaldo-Azevedo-Costa-CV.pdf" className={styles.button}><DownloadIcon size={18} /> {profile.downloadCv}</a>
       </div>
     </aside>
   )

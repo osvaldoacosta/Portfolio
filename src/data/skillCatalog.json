@@ -1,0 +1,16 @@
+{
+  "programmingLanguages": [
+    "Java", "JavaScript", "TypeScript", "Python", "Golang", "SQL",
+    "Kotlin", "C#", "C++", "PHP", "Ruby", "Rust", "Swift"
+  ],
+  "frameworksAndLibraries": [
+    "React", "Next.js", "Vite", "Node.js", "Express.js", "Spring Boot", "Spring Security", "JPA", "Hibernate",
+    "PostgreSQL", "MongoDB", "MySQL", "Redis", "Playwright", "Cucumber", "Puppeteer", "Cypress", "Jest", "JUnit",
+    "Angular", "Vue", "NestJS", "Django", "FastAPI", "Flask", ".NET", "GraphQL", "Tailwind"
+  ],
+  "extra": [
+    "Git", "GitHub", "GitHub Actions", "Docker", "CI/CD", "SonarQube", "Linux", "HTML+CSS", "OpenAPI Generator",
+    "Claude Code", "Cursor", "BMAD", "MCP", "CI&T Flow", "Langflow", "Figma", "Jira",
+    "Kubernetes", "AWS", "Azure", "GCP", "Terraform", "Jenkins", "Kafka", "RabbitMQ"
+  ]
+}

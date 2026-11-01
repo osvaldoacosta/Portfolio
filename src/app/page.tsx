@@ -4,12 +4,13 @@ import style from "../styles/page.module.css"
 import RightMenu from "~/Components/RightMenu";
 import Services from "~/Components/Services";
 import Contact from "~/Components/Contact";
+import { detectSkills } from "~/lib/skills";
 export default function Home() {
   return (
 
     <main>
       <div className={style.layout}>
-        <LeftMenu />
+        <LeftMenu skills={detectSkills()} />
         <div className={style.centerContainer}>
           <Description />
           <Services />
