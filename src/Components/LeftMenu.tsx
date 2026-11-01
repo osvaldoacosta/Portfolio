@@ -1,13 +1,24 @@
 import styles from '../styles/LeftMenu.module.css'
 import Image from 'next/image'
+import { DownloadIcon, GithubIcon, LinkedinIcon } from '~/Components/Icons'
 
 // TODO: Remove direct href links
 export default function LeftMenu(): JSX.Element {
-  const imageUrl: string = process.env.PROFILE_URL ?? ""
+  const languages = [
+    { name: "Português", level: "Native" },
+    { name: "English", level: "Advanced (C1)" },
+  ];
+  const skillGroups = [
+    { title: "Programming Languages", items: ["Java", "JavaScript/Typescript", "Python", "SQL"] },
+    { title: "Frameworks and Libraries", items: ["React", "Next.js", "Express.js", "Spring Boot", "PostgreSQL", "Puppeteer"] },
+    { title: "Extra", items: ["Git", "Docker", "CI/CD Knowledge", "HTML+CSS", "Linux"] },
+  ];
   return (
-    <div className={styles.leftMenu}>
-      <div className={styles.profile}>
-        <Image src={imageUrl} priority={true} width={120} height={120} alt="Osvaldo" className="no-invert" />
+    <aside className={styles.leftMenu}>
+      <div className={`${styles.card} ${styles.profile}`}>
+        <div className={styles.avatar}>
+          <Image src="/profile.jpg" priority={true} width={112} height={112} alt="Osvaldo" />
+        </div>
         <h2>Osvaldo Costa</h2>
         <p>Full Stack Developer</p>
         <div className={styles.socialMedia}>
@@ -15,57 +26,45 @@ export default function LeftMenu(): JSX.Element {
             href="https://github.com/osvaldoacosta"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
-            <Image src="/github.webp" alt="GitHub" width={24} height={24} />
+            <GithubIcon size={18} />
           </a>
           <a
             href="https://www.linkedin.com/in/osvaldo-azevedo-costa-37b632241/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
-            <Image src="/linkedin.webp" alt="GitHub" width={24} height={24} />
+            <LinkedinIcon size={18} />
           </a>
         </div>
       </div>
-      <hr className={styles.leftMenuHr} />
-      <div className={styles.section}>
-        <h4>Languages</h4>
-        <p>Português - Native</p>
-        <p>English - Advanced(C1)</p>
-      </div>
 
-      <hr className={styles.leftMenuHr} />
-      <div className={styles.section}>
-        <h4>Programming Languages</h4>
-        <p>Java</p>
-        <p>JavaScript/Typescript</p>
-        <p>Python</p>
-        <p>SQL</p>
-      </div>
+      <div className={`${styles.card} ${styles.details}`}>
+        <div className={styles.section}>
+          <h4>Languages</h4>
+          {languages.map((language) => (
+            <div key={language.name} className={styles.languageRow}>
+              <span>{language.name}</span>
+              <span>{language.level}</span>
+            </div>
+          ))}
+        </div>
 
-      <hr className={styles.leftMenuHr} />
-      <div className={styles.section}>
-        <h4>Frameworks and Libraries</h4>
-        <p>React</p>
-        <p>Next.js</p>
-        <p>Express.js</p>
-        <p>Spring Boot</p>
-        <p>PostgreSQL</p>
-        <p>Puppeteer</p>
-      </div>
-      <hr className={styles.leftMenuHr} />
+        {skillGroups.map((group) => (
+          <div key={group.title} className={styles.section}>
+            <h4>{group.title}</h4>
+            <div className={styles.chips}>
+              {group.items.map((item) => (
+                <span key={item} className={styles.chip}>{item}</span>
+              ))}
+            </div>
+          </div>
+        ))}
 
-      <div className={styles.section}>
-        <h4>Extra</h4>
-        <p>Git</p>
-        <p>Docker</p>
-        <p>CI/CD Knowledge</p>
-        <p>HTML+CSS</p>
-        <p>Linux</p>
+        <button className={styles.button}><DownloadIcon size={18} /> Download CV</button>
       </div>
-      <hr className={styles.leftMenuHr} />
-
-      <button className={styles.button}>Download CV</button>
-    </div>
+    </aside>
   )
 }

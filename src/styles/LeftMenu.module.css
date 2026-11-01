@@ -1,89 +1,158 @@
 .leftMenu {
-  width: 300px;
-  padding: 20px;
-  background-color: #f3f3f3;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  animation: rise 0.5s ease both;
+}
+
+/* Only sticks when the whole sidebar fits, otherwise its end would be unreachable */
+@media (min-height: 900px) {
+  .leftMenu {
+    position: sticky;
+    top: var(--gap);
+  }
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
 }
 
 .profile {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
-.profile img {
+.avatar {
+  padding: 4px;
   border-radius: 50%;
-  margin-bottom: 10px;
+  background: conic-gradient(from 210deg, var(--accent), transparent 45%, var(--accent));
+  margin-bottom: 14px;
+}
+
+.avatar img {
+  display: block;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  object-fit: cover;
 }
 
 .profile h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 10px 0 5px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .profile p {
-  font-size: 16px;
-  color: #666;
-}
-
-.section {
-  margin: 20px 0;
-}
-
-.section h4 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.section p {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-.button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #36C965;
-  border: none;
-  border-radius: 5px;
-  color: #333;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #61D187;
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.8rem;
 }
 
 .socialMedia {
   display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.socialMedia a {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  color: var(--text-muted);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.socialMedia a:hover {
+  color: var(--accent-text);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section h4 {
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.languageRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.languageRow + .languageRow {
+  margin-top: 4px;
+}
+
+.languageRow span:last-child {
+  color: var(--text-muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 3px 10px;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.socialMedia a img {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.socialMedia a:hover img {
-  filter: grayscale(0%);
-}
-
-.leftMenuHr {
-  width: 70%;
-  margin: auto;
+  gap: 8px;
+  width: 100%;
+  padding: 11px;
+  background-color: var(--accent);
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-small);
+  color: var(--on-accent);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--accent-hover);
+}
+
+@media (max-width: 1040px) {
+  /* Unwraps the two cards so the page can place the skills after the main content */
+  .leftMenu {
+    display: contents;
+  }
+
+  .profile {
+    order: 1;
+    animation: rise 0.5s ease both;
+  }
+
+  .details {
+    order: 3;
+  }
 }

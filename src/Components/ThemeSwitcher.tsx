@@ -6,14 +6,15 @@ import { useTheme } from "./ThemeProvider";
 
 interface ThemeSwitcherProps {
   children: ReactNode;
+  className?: string;
 }
 
-export function ThemeSwitcher({ children }: ThemeSwitcherProps) {
+export function ThemeSwitcher({ children, className }: ThemeSwitcherProps) {
   const { toggleTheme } = useTheme();
 
   return (
-    <div onClick={toggleTheme} style={{ cursor: "pointer" }}>
+    <button type="button" onClick={toggleTheme} className={className} aria-label="Change Theme">
       {children}
-    </div>
+    </button>
   );
 }

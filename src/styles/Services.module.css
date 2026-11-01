@@ -1,116 +1,66 @@
-.servicesContainer {
-  padding: 20px;
-  text-align: center;
-  /* Center align the text in the container */
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  /* Allow wrapping to the next line */
-  justify-content: center;
-  /* Center the cards in the row */
-  gap: 20px;
-  /* Space between cards */
-}
-
-.cardItem {
-  background: #f1f1f1;
-  /* Light background for cards */
-  border: 1px solid #ddd;
-  /* Border around cards */
-  border-radius: 8px;
-  /* Rounded corners */
-  padding: 20px;
-  /* Padding inside cards */
-  margin: 10px;
-  /* Margin between cards */
-  width: calc(25% - 50px);
-  /* Each card takes 25% of the row width minus margins */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for depth */
-  text-align: center;
-  /* Align text to the left inside cards */
-  transition: width 0.3s ease;
-  /* Smooth transition for width */
-}
-
-.icon {
-  display: flex;
-  justify-content: center;
-  /* Center the icon */
-  margin-bottom: 10px;
-  /* Space between icon and title */
-}
-
-.cardTitle {
-  font-weight: bold;
-  /* Bold title */
-  font-size: 1rem;
-  /* Adjust font size */
-  margin: 10px 0;
-  /* Margin around title */
-  text-align: center;
-  /* Center the title */
-}
-
-.cardDescription {
-  color: #333;
-  /* Gray color for description */
-  font-size: 1em;
-  /* Description font size */
-  text-align: center;
-  /* Center the description */
+.serviceItems {
+  scroll-margin-top: var(--gap);
+  padding: clamp(12px, 2vw, 20px) 0;
+  animation: rise 0.5s 0.16s ease both;
 }
 
 .defaultText {
-  text-align: center;
-  /* Center text for the title and description */
-  margin-bottom: 20px;
-  /* Space below the text */
+  margin-bottom: 24px;
+  padding-inline: 4px;
 }
 
-.defaultText h1 {
-  font-size: 2rem;
-  /* Font size */
-  font-weight: bold;
-  padding-inline: 25px;
-  /* Padding on the sides */
-  color: #222;
-  /* Text color */
+.defaultText h2 {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .defaultText p {
-  padding-inline: 70px;
-  /* Padding on the sides */
-  margin-inline: 40px;
-  /* Margin on the sides */
-  font-size: 1.3rem;
-  /* Font size */
-  color: #666;
-  /* Text color */
-  line-height: 1.6;
-  /* Line height */
+  max-width: 62ch;
+  margin-top: 8px;
+  color: var(--text-muted);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .cardItem {
-    width: calc(33.33% - 50px);
-    /* 3 cards per row */
-  }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: var(--gap);
 }
 
-@media (max-width: 900px) {
-  .cardItem {
-    width: calc(50% - 50px);
-    /* 2 cards per row */
-  }
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-@media (max-width: 600px) {
-  .cardItem {
-    width: calc(100% - 50px);
-    /* 1 card per row */
-  }
+.cardItem:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  background-color: var(--accent-soft);
+  border-radius: var(--radius-small);
+  color: var(--accent-text);
+}
+
+.cardItem h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cardDescription {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.94rem;
 }

@@ -1,33 +1,31 @@
 import React from "react";
 import styles from "../styles/Services.module.css"
-import Image from "next/image"; // Make sure to import Image from next/image if you're using Next.js
+import { BotIcon, CodeIcon, DocumentIcon } from "~/Components/Icons";
 
 export default function Services(): JSX.Element {
   const serviceItems = [
-    { icon: "/service/servicePc.webp", title: "Web development", description: 'Landing Pages, Blogs, etc' },
-    { icon: "/service/serviceDoc.webp", title: "Software Documentation", description: 'Document your  codebase following the best pratices' },
-    { icon: "/service/serviceAuto.webp", title: "Task Automation", description: 'I can automate your tasks using a bot that mimics human actions efficiently.' },
+    { icon: CodeIcon, title: "Web development", description: 'Landing Pages, Blogs, etc' },
+    { icon: DocumentIcon, title: "Software Documentation", description: 'Document your codebase following the best practices' },
+    { icon: BotIcon, title: "Task Automation", description: 'I can automate your tasks using a bot that mimics human actions efficiently.' },
   ];
   return (
-    <div className={styles.serviceItems}>
+    <section id="services" className={styles.serviceItems}>
       <div className={styles.defaultText}>
-        <h1>My Services</h1>
+        <h2>My Services</h2>
         <p>I offer a range of solutions tailored to meet your needs, from creating powerful web applications to documenting your software systems and automating repetitive tasks.</p>
       </div>
 
       <div className={styles.cards}>
-        {serviceItems.map((item, index) => (
-          <div key={index} className={`${styles.cardItem}`}>
+        {serviceItems.map((item) => (
+          <div key={item.title} className={styles.cardItem}>
             <div className={styles.icon}>
-              <Image src={item.icon} alt={item.description} width={60} height={60} />
+              <item.icon size={24} />
             </div>
-            <h2>{item.title}</h2>
+            <h3>{item.title}</h3>
             <p className={styles.cardDescription}>{item.description}</p>
-
           </div>
         ))}
-
       </div>
-    </div>
+    </section>
   )
 }
