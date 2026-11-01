@@ -63,6 +63,12 @@
   display: none;
 }
 
+.languageCode {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 /* TODO: Change the tooltip to another file, so it can be used in all website */
 .tooltip {
   position: absolute;

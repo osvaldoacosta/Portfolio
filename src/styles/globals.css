@@ -86,6 +86,10 @@ button {
   outline-offset: 2px;
 }
 
+[data-lang-pending] main {
+  visibility: hidden;
+}
+
 @keyframes rise {
   from {
     opacity: 0;

@@ -1,18 +1,13 @@
+"use client";
+
 import styles from '../styles/LeftMenu.module.css'
 import Image from 'next/image'
 import { DownloadIcon, GithubIcon, LinkedinIcon } from '~/Components/Icons'
+import { useLanguage } from '~/Components/LanguageProvider'
 
 // TODO: Remove direct href links
 export default function LeftMenu(): JSX.Element {
-  const languages = [
-    { name: "Português", level: "Native" },
-    { name: "English", level: "Advanced (C1)" },
-  ];
-  const skillGroups = [
-    { title: "Programming Languages", items: ["Java", "JavaScript/Typescript", "Python", "SQL"] },
-    { title: "Frameworks and Libraries", items: ["React", "Next.js", "Express.js", "Spring Boot", "PostgreSQL", "Puppeteer"] },
-    { title: "Extra", items: ["Git", "Docker", "CI/CD Knowledge", "HTML+CSS", "Linux"] },
-  ];
+  const { profile } = useLanguage().t;
   return (
     <aside className={styles.leftMenu}>
       <div className={`${styles.card} ${styles.profile}`}>
@@ -20,7 +15,7 @@ export default function LeftMenu(): JSX.Element {
           <Image src="/profile.jpg" priority={true} width={112} height={112} alt="Osvaldo" />
         </div>
         <h2>Osvaldo Costa</h2>
-        <p>Full Stack Developer</p>
+        <p>{profile.role}</p>
         <div className={styles.socialMedia}>
           <a
             href="https://github.com/osvaldoacosta"
@@ -43,8 +38,8 @@ export default function LeftMenu(): JSX.Element {
 
       <div className={`${styles.card} ${styles.details}`}>
         <div className={styles.section}>
-          <h4>Languages</h4>
-          {languages.map((language) => (
+          <h4>{profile.languagesTitle}</h4>
+          {profile.languages.map((language) => (
             <div key={language.name} className={styles.languageRow}>
               <span>{language.name}</span>
               <span>{language.level}</span>
@@ -52,7 +47,7 @@ export default function LeftMenu(): JSX.Element {
           ))}
         </div>
 
-        {skillGroups.map((group) => (
+        {profile.skillGroups.map((group) => (
           <div key={group.title} className={styles.section}>
             <h4>{group.title}</h4>
             <div className={styles.chips}>
@@ -63,7 +58,7 @@ export default function LeftMenu(): JSX.Element {
           </div>
         ))}
 
-        <button className={styles.button}><DownloadIcon size={18} /> Download CV</button>
+        <button className={styles.button}><DownloadIcon size={18} /> {profile.downloadCv}</button>
       </div>
     </aside>
   )

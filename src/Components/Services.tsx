@@ -1,18 +1,22 @@
+"use client";
+
 import React from "react";
 import styles from "../styles/Services.module.css"
 import { BotIcon, CodeIcon, DocumentIcon } from "~/Components/Icons";
+import { useLanguage } from "~/Components/LanguageProvider";
 
 export default function Services(): JSX.Element {
+  const { services } = useLanguage().t;
   const serviceItems = [
-    { icon: CodeIcon, title: "Web development", description: 'Landing Pages, Blogs, etc' },
-    { icon: DocumentIcon, title: "Software Documentation", description: 'Document your codebase following the best practices' },
-    { icon: BotIcon, title: "Task Automation", description: 'I can automate your tasks using a bot that mimics human actions efficiently.' },
+    { icon: CodeIcon, ...services.web },
+    { icon: DocumentIcon, ...services.docs },
+    { icon: BotIcon, ...services.automation },
   ];
   return (
     <section id="services" className={styles.serviceItems}>
       <div className={styles.defaultText}>
-        <h2>My Services</h2>
-        <p>I offer a range of solutions tailored to meet your needs, from creating powerful web applications to documenting your software systems and automating repetitive tasks.</p>
+        <h2>{services.title}</h2>
+        <p>{services.description}</p>
       </div>
 
       <div className={styles.cards}>

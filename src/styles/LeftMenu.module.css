@@ -6,7 +6,7 @@
 }
 
 /* Only sticks when the whole sidebar fits, otherwise its end would be unreachable */
-@media (min-height: 900px) {
+@media (min-height: 920px) {
   .leftMenu {
     position: sticky;
     top: var(--gap);

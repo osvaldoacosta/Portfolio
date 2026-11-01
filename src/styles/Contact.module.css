@@ -54,11 +54,9 @@
 
 .cardHandle {
   display: block;
-  overflow: hidden;
   color: var(--text-muted);
   font-size: 0.82rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .arrow {

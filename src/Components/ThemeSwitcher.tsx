@@ -7,13 +7,14 @@ import { useTheme } from "./ThemeProvider";
 interface ThemeSwitcherProps {
   children: ReactNode;
   className?: string;
+  label: string;
 }
 
-export function ThemeSwitcher({ children, className }: ThemeSwitcherProps) {
+export function ThemeSwitcher({ children, className, label }: ThemeSwitcherProps) {
   const { toggleTheme } = useTheme();
 
   return (
-    <button type="button" onClick={toggleTheme} className={className} aria-label="Change Theme">
+    <button type="button" onClick={toggleTheme} className={className} aria-label={label}>
       {children}
     </button>
   );
