@@ -1,0 +1,45 @@
+{
+  "title": "Desenvolvedor de Software Pleno",
+  "summary": "Sou Desenvolvedor de Software Pleno na CI&T, com perfil full-stack (Node.js, MongoDB, React/Vite), experiência em automação de QA e base em Java/Spring Boot. Trabalho de ponta a ponta com clientes, do PRD e refinamento de histórias à implementação e aos testes, e sou um dos primeiros a adotar o Spec-Driven Development assistido por IA.",
+  "skills": {
+    "QA & Automation": { "label": "QA e Automação", "notes": "testes E2E, de regressão, smoke e manuais" },
+    "AI Tooling": { "label": "Ferramentas de IA" },
+    "Agile": { "label": "Ágil", "notes": "PRD/refinamento de histórias, comunicação com clientes, transferência de conhecimento" },
+    "Other": { "label": "Outros" }
+  },
+  "languages": ["Português (Nativo)", "Inglês (Avançado, C1)"],
+  "experience": [
+    {
+      "period": "Out 2025 – Atual",
+      "role": "Desenvolvedor de Software",
+      "highlights": [
+        "Desenvolvimento full-stack de novas funcionalidades (Node.js, MongoDB, React/Vite), do design aos testes, além de manutenção em produção e correção de bugs.",
+        "Automação E2E com Playwright/Cucumber (BDD), incluindo estratégia de dados de teste, refatoração do framework e banco de dados dedicado para testes E2E, além de QA de regressão, smoke e manual.",
+        "Único desenvolvedor da funcionalidade de Roles & Permissions: defendi sua priorização, propus uma entrega incremental e a conduzi com BMAD, do PRD e refinamento de histórias à entrega e correção de bugs.",
+        "Spec-Driven Development assistido por IA (Claude Code, BMAD) com integrações MCP (Figma, Jira, SonarQube); introduzi a geração de casos de teste e de código de teste com BMAD para o QA.",
+        "Automação de release notes no GitHub com o CI&T Flow Maker (baseado em Langflow); CI/CD com GitHub Actions.",
+        "Entrega ágil em colaboração direta com clientes; sessões de transferência de conhecimento sobre automação de testes."
+      ]
+    },
+    {
+      "period": "Mar 2025 – Set 2025",
+      "role": "Estagiário de Desenvolvimento de Software",
+      "highlights": [
+        "Desenvolvimento full-stack (MongoDB, Node.js, React/Vite); cobertura de QA para o time durante períodos de férias.",
+        "Testes E2E, de regressão, manuais e smoke; workflows de automação com GitHub Actions; Git/GitHub.",
+        "Levantamento de requisitos diretamente com stakeholders; cerimônias ágeis e reuniões com clientes."
+      ]
+    },
+    {
+      "period": "Mar 2023 – Mar 2025",
+      "role": "Desenvolvedor de Software",
+      "highlights": [
+        "Microsserviços Spring Boot como freelancer para programas de parceiros; manutenção e documentação de aplicações legadas (PostgreSQL, OpenAPI Generator, JPA/Hibernate, Spring Security)."
+      ]
+    }
+  ],
+  "education": [
+    { "period": "2025", "description": "Bacharelado em Engenharia da Computação - Universidade de Pernambuco (UPE)" },
+    { "period": "2020 – 2022", "description": "Tecnólogo em Sistemas para Internet - Universidade Católica de Pernambuco (UNICAP)" }
+  ]
+}

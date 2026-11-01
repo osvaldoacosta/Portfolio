@@ -21,6 +21,8 @@ export const translations = {
         extra: "Extra",
       },
       downloadCv: "Download CV",
+      cvFile: "/cv.pdf",
+      cvFileName: "Osvaldo-Azevedo-Costa-CV.pdf",
     },
     hero: {
       headlineStart: "Hello, I'm Osvaldo, a ",
@@ -64,6 +66,8 @@ export const translations = {
         extra: "Extra",
       },
       downloadCv: "Baixar currículo",
+      cvFile: "/cv-pt.pdf",
+      cvFileName: "Osvaldo-Azevedo-Costa-Curriculo.pdf",
     },
     hero: {
       headlineStart: "Olá, eu sou o Osvaldo, desenvolvedor ",

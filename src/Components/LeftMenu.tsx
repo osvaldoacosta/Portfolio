@@ -64,7 +64,7 @@ export default function LeftMenu({ skills }: LeftMenuProps): JSX.Element {
           </div>
         ))}
 
-        <a href="/cv.pdf" download="Osvaldo-Azevedo-Costa-CV.pdf" className={styles.button}><DownloadIcon size={18} /> {profile.downloadCv}</a>
+        <a href={profile.cvFile} download={profile.cvFileName} className={styles.button}><DownloadIcon size={18} /> {profile.downloadCv}</a>
       </div>
     </aside>
   )

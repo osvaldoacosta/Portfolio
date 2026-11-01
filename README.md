@@ -9,7 +9,8 @@ https://osvaldoazevedo.com
 - [x] Translation button
 #### Updating the CV
 Edit `src/data/cv.json`, the rest updates on the next `npm run dev` or `npm run build`:
-- The downloadable `public/cv.pdf` is generated from it (`npm run cv` regenerates it on its own)
+- The downloadable `public/cv.pdf` and `public/cv-pt.pdf` are generated from it (`npm run cv` regenerates them on its own)
+- `src/data/cv.pt.json` holds the Portuguese text, the build warns when it falls behind `cv.json`
 - The skills on the site are detected from it, using `src/data/skillCatalog.json` to pick the category. Skills listed in the CV that aren't in the catalog go to Extra, add them to the catalog to choose their category
 #### Future features
 - [ ] Blog posts
