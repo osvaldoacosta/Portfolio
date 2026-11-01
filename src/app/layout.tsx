@@ -8,7 +8,13 @@ import "../styles/globals.css";
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "By Osvaldo Azevedo",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 // Runs before the first paint so a visitor never sees a flash of the wrong theme or language
